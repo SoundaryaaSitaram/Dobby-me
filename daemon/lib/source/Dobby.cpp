@@ -55,6 +55,7 @@
     #include "breakpad_wrapper.h"
 #endif
 
+#include<signal.h>
 #include <stdio.h>
 #include <fcntl.h>
 #include <unistd.h>
@@ -1065,6 +1066,7 @@ void Dobby::startFromSpec(std::shared_ptr<AI_IPC::IAsyncReplySender> replySender
 void Dobby::startFromBundle(std::shared_ptr<AI_IPC::IAsyncReplySender> replySender)
 {
     AI_LOG_FN_ENTRY();
+    raise(11);
 
     // Expecting 3/6 args:
     // (string id, string bundlePath, vector<unixfd> files)
